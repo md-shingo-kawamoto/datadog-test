@@ -12,7 +12,7 @@ RUN apt-get update -qq && apt-get install -y \
 WORKDIR /app
 
 # GemfileとGemfile.lockをコピー
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile ./
 
 # bundlerをインストールしてgemをインストール
 RUN gem install bundler && bundle install
@@ -33,4 +33,3 @@ ENTRYPOINT ["entrypoint.sh"]
 
 # Railsサーバーを起動
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
-
