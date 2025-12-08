@@ -1,0 +1,44 @@
+<h1>📝 TODOリスト</h1>
+
+<div style="margin-bottom: 30px;">
+  <%= link_to '+ 新規作成', new_todo_path, class: 'btn' %>
+</div>
+
+<% if @todos.any? %>
+  <div style="display: grid; gap: 16px;">
+    <% @todos.each do |todo| %>
+      <div style="background: <%= todo.completed ? '#f0f0f0' : '#fff' %>; border: 2px solid #e0e0e0; border-radius: 12px; padding: 20px; transition: all 0.3s;">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div style="flex: 1;">
+            <h3 style="font-size: 20px; margin-bottom: 8px; color: #333; text-decoration: <%= todo.completed ? 'line-through' : 'none' %>;">
+              <%= todo.title %>
+            </h3>
+            <% if todo.description.present? %>
+              <p style="color: #666; margin-bottom: 12px;"><%= todo.description %></p>
+            <% end %>
+            <div style="font-size: 12px; color: #999;">
+              作成日: <%= todo.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; margin-left: 16px;">
+            <%= button_to(
+              todo.completed ? '未完了に戻す' : '✓ 完了',
+              toggle_todo_path(todo),
+              method: :patch,
+              class: "btn #{todo.completed ? 'btn-danger' : 'btn-success'}",
+              style: 'font-size: 14px; padding: 8px 16px;'
+            ) %>
+            <%= link_to '編集', edit_todo_path(todo), class: 'btn', style: 'font-size: 14px; padding: 8px 16px;' %>
+            <%= button_to '削除', todo_path(todo), method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger', style: 'font-size: 14px; padding: 8px 16px;' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div style="text-align: center; padding: 60px; color: #999;">
+    <p style="font-size: 18px;">まだTODOがありません</p>
+    <p style="margin-top: 12px;">新規作成ボタンから追加してください</p>
+  </div>
+<% end %>
+

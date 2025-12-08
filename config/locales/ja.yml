@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      todo: TODO
+    attributes:
+      todo:
+        title: タイトル
+        description: 説明
+        completed: 完了
+        created_at: 作成日時
+        updated_at: 更新日時
+  todos:
+    index:
+      title: TODOリスト
+      new: 新規作成
+      no_todos: TODOがありません
+    new:
+      title: 新規TODO作成
+    edit:
+      title: TODO編集
+    form:
+      submit: 保存
+      cancel: キャンセル
+
