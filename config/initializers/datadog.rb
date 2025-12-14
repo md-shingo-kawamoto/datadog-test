@@ -37,5 +37,10 @@ Datadog.configure do |c|
     'team' => 'backend',
     'component' => 'todo-app'
   }
+
+  # GitHub ソースコード連携
+  # リポジトリURLを設定
+  c.tags['git.repository_url'] = ENV.fetch('DD_GIT_REPOSITORY_URL', 'https://github.com/md-shingo-kawamoto/datadog-test')
+  c.tags['git.commit.sha'] = ENV.fetch('DD_GIT_COMMIT_SHA', nil) if ENV['DD_GIT_COMMIT_SHA']
 end
 

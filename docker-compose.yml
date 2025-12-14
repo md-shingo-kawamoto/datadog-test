@@ -54,6 +54,9 @@ services:
       - DD_ENV=development
       - DD_SERVICE=todo-app
       - DD_VERSION=1.0.0
+      # GitHub ソースコード連携
+      - DD_GIT_REPOSITORY_URL=${DD_GIT_REPOSITORY_URL:-https://github.com/md-shingo-kawamoto/datadog-test}
+      - DD_GIT_COMMIT_SHA=${DD_GIT_COMMIT_SHA:-}
     volumes:
       - .:/app
       - bundle_cache:/usr/local/bundle
