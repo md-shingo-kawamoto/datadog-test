@@ -14,7 +14,6 @@ module TodoApp
     config.after_initialize do
       Datadog.configure do |c|
         c.tracing.enabled = true
-        c.tracing.analytics_enabled = true
         c.tracing.instrument :rails
         c.tracing.instrument :mysql2
         c.env = ENV['DD_ENV'] || 'development'

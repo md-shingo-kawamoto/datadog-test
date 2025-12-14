@@ -20,5 +20,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_01_000000) do
     t.index ["completed"], name: "index_todos_on_completed"
     t.index ["created_at"], name: "index_todos_on_created_at"
   end
-end
 
+end

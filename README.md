@@ -35,10 +35,10 @@ DD_API_KEY=your_datadog_api_key_here
 
 ```bash
 # コンテナをビルドして起動
-docker-compose up --build
+docker compose up --build
 
 # バックグラウンドで起動する場合
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ### 3. アプリケーションへのアクセス
