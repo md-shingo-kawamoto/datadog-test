@@ -14,6 +14,8 @@ Datadog.configure do |c|
 
   # トレーシング設定
   c.tracing.enabled = true
+  c.tracing.report_hostname = true  # ホスト名のレポート
+  c.tracing.log_injection = true    # ログとトレースの関連付け
 
   # Railsインストゥルメンテーション
   c.tracing.instrument :rails, analytics_enabled: true
