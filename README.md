@@ -1,6 +1,15 @@
 # Rails TODO App with Datadog APM
 
-Datadog APM監視付きのRails TODOアプリケーションです。意図的にエラーを発生させてDatadogでAPMエラーを確認することができます。
+> ⚠️ **注意事項**
+>
+> このリポジトリは **AIによって生成されたサンプルアプリケーション** です。
+> Datadog APMおよびWorkflow Automationの検証・学習目的で作成されており、本番環境での利用は想定していません。
+> コードの品質やセキュリティについては十分な検証を行った上でご利用ください。
+
+---
+
+Datadog APM監視付きのRails TODOアプリケーションです。
+意図的にエラーを発生させてDatadogでAPMエラーを確認することができます。
 
 ## 構成
 
